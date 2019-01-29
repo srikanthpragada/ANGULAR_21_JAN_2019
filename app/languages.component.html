@@ -1,8 +1,10 @@
 <h1>Languages</h1>
 
-Language : <input type="text" #lang/>
+Language : <input type="text" #lang/> {{message}}
 <p></p>
 <button (click)="addLang(lang.value)">Add</button>
+&nbsp;
+<button (click)="deleteLang(lang.value)">Delete</button>
 <p></p>
 
 <ul  *ngFor="let l of langs">

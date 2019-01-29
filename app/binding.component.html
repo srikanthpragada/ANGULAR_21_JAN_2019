@@ -1,0 +1,24 @@
+
+<style>
+  .bright {color:red;font-weight: bold;}
+</style>
+<h2>Binding Demo</h2>
+
+<h3>Property Binding</h3>
+<div style="color:red"  [innerText]="message"></div>
+<div style="color:blue">{{message}}</div>
+<div style="color:green" bind-innerText="message"></div>
+<div  [innerText]="'Hello'"></div>
+
+<h3>Attribute Binding</h3>
+
+<input type="button" [attr.value]="action" />
+<input type="button" value={{action}} />
+
+<h3>Class Binding</h3>
+<div  [class.bright]='true'>This is class binding</div>
+
+<h2>Demo</h2>
+<h1 [innerText]="quote"></h1>
+<button (click)='toggleQuote()'>Change</button>
+

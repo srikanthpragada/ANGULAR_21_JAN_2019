@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'langs',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 export class LanguagesComponent {
     langs : string[]  = []
     message : string = ""
+    @ViewChild("lang") lang : ElementRef;
+
     constructor() { 
 
     }
@@ -27,7 +29,10 @@ export class LanguagesComponent {
       this.message = ""
       var pos = this.langs.indexOf(lang)
       if (pos == -1)
+      {
          this.langs.push(lang)
+         this.lang.nativeElement.value = ""  // clear text from textbox 
+      }
       else
          this.message = "Duplicate Value!"
     }

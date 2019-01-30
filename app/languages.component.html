@@ -8,5 +8,5 @@ Language : <input type="text" #lang/> {{message}}
 <p></p>
 
 <ul  *ngFor="let l of langs">
-    <li>{{l}}</li>
+    <li>{{l}}  <button (click)="deleteLang(l)">Delete</button> </li>
 </ul>

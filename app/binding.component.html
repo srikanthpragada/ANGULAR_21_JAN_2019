@@ -1,6 +1,7 @@
 
 <style>
   .bright {color:red;font-weight: bold;}
+  .big {font-size:30pt}
 </style>
 <h2>Binding Demo</h2>
 
@@ -16,9 +17,17 @@
 <input type="button" value={{action}} />
 
 <h3>Class Binding</h3>
-<div  [class.bright]='true'>This is class binding</div>
+<div  [class.bright]='true'  [class.big]="false">This is class binding</div>
 
-<h2>Demo</h2>
-<h1 [innerText]="quote"></h1>
-<button (click)='toggleQuote()'>Change</button>
+<div  [ngClass]="{'bright' : true, 'big' : true}">This is ngClass attribute directive</div>
 
+<h3>Style Binding</h3>
+
+<input type="checkbox" #bright  (click)="null" />Bright
+<p></p>
+<div  [style.font-weight]="800" 
+      [style.color]="bright.checked ? 'red' : 'blue'">This is in RED</div>
+
+<h3>Event Binidng</h3>     
+
+<button (click)="process($event)">Click On Me</button>

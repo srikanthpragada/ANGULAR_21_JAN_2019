@@ -1,0 +1,15 @@
+
+<h1>Table</h1>
+
+Number : <input type="number" #number value="25" />
+Size  : <input type="number" #size  value="10" />
+<button (click)="generate_table(number.value, size.value)">Show</button>
+<p></p>
+<table border="1" cellpadding="5pt">
+    <tr *ngFor="let v of values">
+        <td>{{v.value}}</td>
+        <td>{{v.index}}</td>
+        <td>{{v.result}}</td>
+    </tr>
+</table>
+

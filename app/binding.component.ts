@@ -10,6 +10,7 @@ export class BindingComponent {
      action = "Print"
      quote = "Think Big!"
      bright = true 
+     values = [10,20,30]
 
      toggleQuote() {
          if (this.quote == "Think Big!")

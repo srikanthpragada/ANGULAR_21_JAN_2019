@@ -3,6 +3,22 @@
   .bright {color:red;font-weight: bold;}
   .big {font-size:30pt}
 </style>
+
+<h2>If Directive</h2>
+<div *ngIf="false; else falseblock">True Value</div>
+<ng-template #falseblock><span>This is false value</span></ng-template>
+
+<div *ngFor="let v of values;let odd=odd">
+    <span *ngIf="!odd">This is even row</span>
+    <span *ngIf="odd">This is odd row</span>
+</div>
+
+<span *ngFor="let v of values;let last=last">
+    {{v}}
+    <span *ngIf="!last">,</span>
+</span>
+
+
 <h2>Binding Demo</h2>
 
 <h3>Property Binding</h3>
@@ -31,3 +47,5 @@
 <h3>Event Binidng</h3>     
 
 <button (click)="process($event)">Click On Me</button>
+
+

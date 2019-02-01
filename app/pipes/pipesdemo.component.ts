@@ -1,4 +1,4 @@
-import { Component  } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { BracketsPipe  } from './brackets.pipe';
 
 @Component({
@@ -25,15 +25,13 @@ import { BracketsPipe  } from './brackets.pipe';
            <p></p>
            {{ person | json }}
            <p></p>
-           <!--
            {{ name | brackets : 'u' }}
            <p></p>
-           {{ name | slice : 10 | brackets : 'u' }}
-           -->
+           {{ name | slice : 10 | brackets }}
          </h1>
     `
 })
-export class PipesDemoComponent   {
+export class PipesDemoComponent  implements OnInit {
    today : Date;
    amount : number;
    name : string;
@@ -43,5 +41,10 @@ export class PipesDemoComponent   {
        this.today = new Date();
        this.amount = 23939393.398;
        this.name ="Srikanth Technologies";
+       console.log("Constructor")
+   }
+
+   ngOnInit(): void {
+       console.log("ngOninit()")
    }
 }

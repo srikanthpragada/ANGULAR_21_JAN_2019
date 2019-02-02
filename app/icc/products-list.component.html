@@ -1,0 +1,13 @@
+
+<st-add-product></st-add-product>
+
+<h2>Products List </h2>
+
+<div *ngFor="let prod of products;let idx = index">
+   <st-product-details 
+       (delete)="deleteProduct($event)" 
+       [id]="idx"
+       [product]="prod">
+   </st-product-details>
+</div>    
+

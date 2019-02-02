@@ -1,24 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HelloComponent } from './hello.component';
-import { LanguagesComponent } from './languages.component';
-import { BindingComponent } from './binding.component';
-import { QuotesComponent } from './quotes.component';
-import { TableComponent } from './table.component';
-import { PipesDemoComponent } from './pipes/pipesdemo.component';
-import { BracketsPipe } from './pipes/brackets.pipe';
-import { UseStackComponent } from './services/usestack.component';
-import { StackService } from './services/stack.service';
+import { FirstComponent } from './icc/first.component';
+import { SecondComponent } from './icc/second.component';
+import { ProductsListComponent } from './icc/products-list.component';
+import { ProductDetailsComponent } from './icc/product-details.component';
+import { AddproductComponent } from './icc/add-product.component';
 
 @NgModule({
   declarations: [
-     BindingComponent, LanguagesComponent, QuotesComponent, TableComponent,
-     PipesDemoComponent, BracketsPipe, UseStackComponent
+    ProductsListComponent,
+    ProductDetailsComponent,
+    AddproductComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [StackService ],
-  bootstrap: [UseStackComponent]
+  providers: [ ],
+  bootstrap: [ProductsListComponent]
 })
 export class AppModule { }

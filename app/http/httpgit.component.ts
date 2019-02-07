@@ -20,20 +20,24 @@ export class HttpGitComponent {
     constructor(private http: HttpClient) {
     }
 
-    getDetails(username: string): void {
+    clearall() 
+    {
         this.user = null;
         this.message = null;
+        this.repos = null 
         this.isLoading = true; 
-
+    }
+    
+    getDetails(username: string): void {
+        this.clearall()
         this.http.get<GitUser>(this.url + username)
             .pipe(finalize( () => this.isLoading = false))
             .subscribe(resp => this.user = resp,
                        error => this.message = "Sorry! User Not Found!");
     }
 
-
     getRepos(username: string): void {
-        this.repos = null 
+        this.clearall()
         this.http.get<GitRepo[]>(this.url + username + "/repos")
             .pipe(finalize( () => this.isLoading = false))
             .subscribe(resp => this.repos = resp,
